@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vernaclearn.AI</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background: #f5f7ff;
+            color: #222;
+        }
+
+        header {
+            background: #4f46e5;
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 36px;
+        }
+
+        header p {
+            font-size: 18px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 20px;
+        }
+
+        .card {
+            background: white;
+            padding: 25px;
+            margin-bottom: 25px;
+            border-radius: 15px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        textarea {
+            width: 100%;
+            height: 120px;
+            padding: 12px;
+            font-size: 16px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+        }
+
+        select, button {
+            padding: 12px;
+            margin-top: 15px;
+            border-radius: 8px;
+            border: none;
+            font-size: 16px;
+        }
+
+        select {
+            border: 1px solid #ccc;
+        }
+
+        button {
+            background: #4f46e5;
+            color: white;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #3730a3;
+        }
+
+        #output {
+            margin-top: 20px;
+            padding: 15px;
+            background: #eef2ff;
+            border-radius: 10px;
+            min-height: 40px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: #666;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Vernaclearn.AI</h1>
+        <p>AI-Powered Vernacular Learning Platform</p>
+    </header>
+
+    <div class="container">
+
+        <div class="card">
+            <h2>Learn in Your Mother Tongue 🌏</h2>
+
+            <p>
+                Vernaclearn.AI helps primary school students understand
+                educational concepts in their regional language.
+            </p>
+
+            <textarea id="text"
+                placeholder="Enter a concept you want to learn..."></textarea>
+
+            <br>
+
+            <select id="language">
+                <option value="Telugu">Telugu</option>
+                <option value="Hindi">Hindi</option>
+                <option value="English">English</option>
+            </select>
+
+            <br>
+
+            <button onclick="explainConcept()">
+                Explain Concept
+            </button>
+
+            <div id="output">
+                Your explanation will appear here.
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>✨ How Vernaclearn.AI Helps</h2>
+
+            <ul>
+                <li>Explains difficult concepts simply</li>
+                <li>Supports regional languages</li>
+                <li>Designed for primary school students</li>
+                <li>Can be extended with AI translation</li>
+                <li>Can support voice-based learning</li>
+            </ul>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>Vernaclearn.AI | Student Project</p>
+    </footer>
+
+    <script>
+        function explainConcept() {
+
+            const text = document.getElementById("text").value;
+            const language = document.getElementById("language").value;
+            const output = document.getElementById("output");
+
+            if (text.trim() === "") {
+                output.innerHTML = "Please enter a concept first.";
+                return;
+            }
+
+            output.innerHTML =
+                "You selected <b>" + language +
+                "</b>.<br><br>" +
+                "Simple explanation for: <b>" +
+                text +
+                "</b><br><br>" +
+                "AI explanation will be connected in the next version.";
+        }
+    </script>
+
+</body>
+</html>
